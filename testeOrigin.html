@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="teste"
+           type="text">
+    <button id="testeButton">opa</button>
+    <script src="https://unpkg.com/blip-chat-widget"
+            type="text/javascript">
+            </script>
+    <script>
+        const testeButton = document.querySelector('#testeButton');
+        testeButton.addEventListener('click', () => {
+            const inputTeste = document.querySelector('#teste');
+            new BlipChat()
+                .withAppKey('{YOUR_KEY_HERE}')
+                .withButton({ "color": "#2CC3D5", "icon": "" })
+                .withCustomCommonUrl('https://take.chat.blip.ai/')
+                .withCustomMessageMetadata({ pageOrigin: inputTeste.value })
+                .build();
+        });
+    </script>
+
+</body>
+
+</html>
